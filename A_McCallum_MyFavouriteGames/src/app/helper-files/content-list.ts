@@ -1,7 +1,9 @@
-class ContentList {
+import { Content } from "./content-interface";
+
+export class ContentList {
     private _items: Content[];
     
-    constructor(item: Content) {
+    constructor() {
         this._items = [];
     }
 
@@ -20,9 +22,19 @@ class ContentList {
     getItemDetail(index: number): string {
         if(index < this._items.length) {
             let item = this._items[index];
-            return "";
+            let image = item.imgURL != null ? `<img src="${item.imgURL}">` : `<p>No Image</p>`;
+            let type = item.type != null ? item.type : "N/A";
+            let tags = item.tags ? item.tags.join(", ") : "N/A";
+            
+            return `<p>ID: ${item.id}
+                    <p>Title: ${item.title}</p>
+                    <p>Description: ${item.description}</p>
+                    <p>Creator: ${item.creator}</p>
+                    ${image} 
+                    <p>Type: ${type}</p>
+                    <p>Tags: ${tags}</p>`;
         } else {
-            return "";
+            return "<h1>Array index out of bounds</h1>";
         }
     }
 }
