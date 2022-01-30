@@ -20,14 +20,13 @@ export class ContentList {
     }
 
     getItemDetail(index: number): string {
-        if(index < this._items.length) {
+        if(index < this.itemCount() || index > 0 ) {
             let item = this._items[index];
             let image = item.imgURL != null ? `<img src="${item.imgURL}">` : `<p>No Image</p>`;
             let type = item.type != null ? item.type : "N/A";
             let tags = item.tags ? item.tags.join(", ") : "N/A";
             
-            return `<p>ID: ${item.id}
-                    <p>Title: ${item.title}</p>
+            return `<p>Title: ${item.title}</p>
                     <p>Description: ${item.description}</p>
                     <p>Creator: ${item.creator}</p>
                     ${image} 

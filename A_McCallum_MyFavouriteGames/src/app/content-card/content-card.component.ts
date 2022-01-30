@@ -33,7 +33,12 @@ export class ContentCardComponent implements OnInit {
       creator: "Bethesda",
       type: "PC"
     });
-    this.itemInfo = this.myList.getItemDetail(0);
+    let itemList = [];
+    itemList.push(this.myList.getItemDetail(0));
+    itemList.push(this.myList.getItemDetail(1));
+    itemList.push(this.myList.getItemDetail(2));
+
+    this.itemInfo = itemList.join("<hr/>");
   }
 
   ngOnInit(): void {
