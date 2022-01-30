@@ -20,7 +20,9 @@ export class ContentList {
     }
 
     getItemDetail(index: number): string {
-        if(index < this.itemCount() || index > 0 ) {
+        if(index < 0 || index > this.itemCount()) {
+            return "<h2>Array index out of bounds</h2>";
+        } else {
             let item = this._items[index];
             let image = item.imgURL != null ? `<img src="${item.imgURL}">` : `<p>No Image</p>`;
             let type = item.type != null ? item.type : "N/A";
@@ -32,8 +34,7 @@ export class ContentList {
                     ${image} 
                     <p>Type: ${type}</p>
                     <p>Tags: ${tags}</p>`;
-        } else {
-            return "<h1>Array index out of bounds</h1>";
+            
         }
     }
 }
