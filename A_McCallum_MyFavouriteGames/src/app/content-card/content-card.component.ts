@@ -12,6 +12,7 @@ export class ContentCardComponent implements OnInit {
 
   constructor() { 
     this.myList = new ContentList();
+    //add items to list
     this.myList.addItem({
       id: 1,
       title: "The Legend of Zelda: Breath of the Wild",
@@ -33,11 +34,15 @@ export class ContentCardComponent implements OnInit {
       creator: "Bethesda",
       type: "PC"
     });
-    let itemList = [];
-    itemList.push(this.myList.getItemDetail(0));
-    itemList.push(this.myList.getItemDetail(1));
-    itemList.push(this.myList.getItemDetail(2));
 
+    //array to hold game details
+    let itemList: string[] = [];
+    //for each game in myList, add it to the detail array
+    this.myList.items.forEach(element => {
+      itemList.push(this.myList.getItemDetail(this.myList.items.indexOf(element)));
+    });
+
+    //join detail array to one string for output
     this.itemInfo = itemList.join("<hr/>");
   }
 
