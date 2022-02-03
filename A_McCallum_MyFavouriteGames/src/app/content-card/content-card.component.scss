@@ -1,0 +1,44 @@
+:host {
+  font-family: "Bahnschrift", sans-serif;
+  width: 45%;
+  margin: 1em;
+  flex: 1 1 10%;
+
+  div {
+    border: 1px solid black;
+    border-radius: 1.5em;
+    padding: 0 1em 1em;
+
+    h1 {
+      font-size: 2em;
+    }
+
+    img {
+      max-width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+      display: block;
+      border-radius: 1.5em;
+    }
+
+    section {
+      position: relative;
+
+      p.description {
+        width: 65%;
+      }
+
+      ul {
+        position: absolute;
+        top: -1em;
+        right: 1em;
+        border: green;
+      }
+    }
+  }
+}
+
+:host.is-first > div {
+  border: 2px solid black;
+}
+
