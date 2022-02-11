@@ -1,5 +1,5 @@
 <!--<div *ngIf="content ? content.id <= 5 : null">-->
-<div>
+<div class="{{ content?.type }}">
   <header>
     <h1> {{ content?.title }}</h1>
   </header>
@@ -11,7 +11,5 @@
       <li *ngFor="let item of content ? content.tags : null">{{ item }}</li>
     </ul>
   </section>
-  <a (click)="logDetail()">
-    <img *ngIf="content ? content.imgURL : null" src="{{ content?.imgURL }}">
-  </a>
+  <img *ngIf="content ? content.imgURL : null" src="{{ content?.imgURL }}" (click)="logDetail()">
 </div>

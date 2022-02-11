@@ -7,6 +7,10 @@
     text-align: center;
     margin-top: 2em;
 
+    p {
+      margin-bottom: 0;
+    }
+
     p.found {
       color: forestgreen;
     }
