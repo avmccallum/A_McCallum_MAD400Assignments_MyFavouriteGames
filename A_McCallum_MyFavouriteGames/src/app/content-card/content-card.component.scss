@@ -2,12 +2,15 @@
   font-family: "Bahnschrift", sans-serif;
   width: 45%;
   margin: 1em;
-  flex: 1 1 10%;
+  //flex: 1 1 10%;
 
   div {
     border: 1px solid black;
     border-radius: 1.5em;
     padding: 0 1em 1em;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
 
     h1 {
       font-size: 2em;
@@ -42,3 +45,14 @@
   border: 2px solid black;
 }
 
+:host.no-type > div{
+  background: lightblue;
+}
+
+:host.pc-type > div {
+  background: pink;
+}
+
+:host.switch-type > div {
+  background: palegoldenrod;
+}

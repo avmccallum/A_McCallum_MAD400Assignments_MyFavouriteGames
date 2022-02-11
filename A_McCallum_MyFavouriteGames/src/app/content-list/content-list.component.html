@@ -1,1 +1,10 @@
-<app-content-card *ngFor="let item of contentList; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+<!--<app-content-card *ngFor="let item of contentList; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>-->
+<div>
+  <input type="text" #searchItem>
+  <button type="button" (click)="showResult(searchItem.value)">Find Item</button>
+  <p class="search-result">{{ showResult(searchItem.value) }}</p>
+</div>
+
+<app-content-card *ngFor="let item of (contentList | typeFilter); first as isFirst" [content]="item" [class.is-first]="isFirst" [class.no-type]="item"></app-content-card>
+<app-content-card *ngFor="let item of (contentList | typeFilter:'PC'); first as isFirst" [content]="item" [class.is-first]="isFirst" [class.pc-type]="item"></app-content-card>
+<app-content-card *ngFor="let item of (contentList | typeFilter:'Switch'); first as isFirst" [content]="item" [class.is-first]="isFirst" [class.switch-type]="item"></app-content-card>

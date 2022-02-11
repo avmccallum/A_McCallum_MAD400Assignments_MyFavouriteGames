@@ -1,8 +1,18 @@
 :host {
-  margin-top: 2em;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-between;
-  height: 100em;
-  align-content: stretch;
+
+  div {
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+    text-align: center;
+    margin-top: 2em;
+
+    p.found {
+      color: forestgreen;
+    }
+
+    p.not-found {
+      color: red;
+    }
+  }
 }

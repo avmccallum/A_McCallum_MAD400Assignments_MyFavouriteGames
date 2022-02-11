@@ -56,7 +56,40 @@ export class ContentListComponent implements OnInit {
       creator: "Nintendo",
       type: "Switch",
       tags: ["Life Simulation", "Adventure", "Education"]
+    }, {
+      id: 7,
+      title: "Pokémon Legends: Arceus",
+      description: "Survey, catch, and research wild Pokémon in a long-gone era of Sinnoh to complete the region’s first Pokédex.",
+      creator: "Nintendo",
+      imgURL: "https://nintendoeverything.com/wp-content/uploads/Pokemon-Legends-Arceus-update-1.0.2.jpg",
+      type: "Switch"
     }];
 
+  }
+
+  showResult(searchItem: string): string {
+    let resultText = document.querySelector('.search-result');
+    //let contentItems = document.querySelectorAll('.content-item');
+    let searchResult = this.contentList.find(el => el.title.toUpperCase() === searchItem.toUpperCase());
+
+    if(searchItem === "") {
+      return "";
+    }
+
+    if(resultText) {
+      if (searchResult) {
+
+
+        resultText.classList.add('found');
+        resultText.classList.remove('not-found');
+        return searchItem + " was found!";
+      } else {
+        resultText.classList.add('not-found');
+        resultText.classList.remove('found');
+        return searchItem + " was not found!"
+      }
+    }
+
+    return "";
   }
 }
