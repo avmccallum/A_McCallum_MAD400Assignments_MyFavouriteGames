@@ -69,7 +69,6 @@ export class ContentListComponent implements OnInit {
 
   showResult(searchItem: string): string {
     let resultText = document.querySelector('.search-result');
-    //let contentItems = document.querySelectorAll('.content-item');
     let searchResult = this.contentList.find(el => el.title.toUpperCase() === searchItem.toUpperCase());
 
     if(searchItem === "") {
@@ -78,8 +77,6 @@ export class ContentListComponent implements OnInit {
 
     if(resultText) {
       if (searchResult) {
-
-
         resultText.classList.add('found');
         resultText.classList.remove('not-found');
         return searchItem + " was found!";
