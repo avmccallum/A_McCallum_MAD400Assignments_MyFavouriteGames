@@ -1,15 +1,15 @@
 <!--<div *ngIf="content ? content.id <= 5 : null">-->
-<div class="{{ content?.type }}">
+<div *ngIf="content" class="{{ content.type }}">
   <header>
-    <h1> {{ content?.title }}</h1>
+    <h1>{{ content.title }}</h1>
   </header>
   <section>
-    <p class="description"> {{ content?.description }}</p>
-    <p>Creator: {{ content?.creator }}</p>
-    <p *ngIf="content ? content.type : null">Type: {{ content?.type }}</p>
-    <ul *ngIf="content ? content.tags : null">
-      <li *ngFor="let item of content ? content.tags : null">{{ item }}</li>
+    <p class="description"> {{ content.description }}</p>
+    <p>Creator: {{ content.creator }}</p>
+    <p *ngIf="content.type">Type: {{ content.type }}</p>
+    <ul *ngIf="content.tags">
+      <li *ngFor="let item of content.tags">{{ item }}</li>
     </ul>
   </section>
-  <img *ngIf="content ? content.imgURL : null" src="{{ content?.imgURL }}" (click)="logDetail()">
+  <img *ngIf="content.imgURL" src="{{ content.imgURL }}" (click)="logDetail()">
 </div>
