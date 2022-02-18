@@ -1,15 +1,16 @@
 <!--<div *ngIf="content ? content.id <= 5 : null">-->
-<div *ngIf="content" class="{{ content.type }}">
+<div [appHoverAffect]="cardFlag" *ngIf="content" class="{{ content.type }}">
   <header>
     <h1>{{ content.title }}</h1>
   </header>
   <section>
     <p class="description"> {{ content.description }}</p>
     <p>Creator: {{ content.creator }}</p>
-    <p *ngIf="content.type">Type: {{ content.type }}</p>
+    <p [appHoverAffect]="typeFlag" *ngIf="content.type">Type: {{ content.type }}</p>
     <ul *ngIf="content.tags">
-      <li *ngFor="let item of content.tags">{{ item }}</li>
+      <li [appHoverAffect]="tagFlag" *ngFor="let item of content.tags">{{ item }}</li>
     </ul>
   </section>
   <img *ngIf="content.imgURL" src="{{ content.imgURL }}" (click)="logDetail()">
+  <img *ngIf="!content.imgURL" src="https://cdn.pixabay.com/photo/2020/05/04/02/08/control-5127467__340.png">
 </div>

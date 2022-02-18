@@ -2,7 +2,6 @@
   font-family: "Bahnschrift", sans-serif;
   width: 45%;
   margin: 1em;
-  //flex: 1 1 10%;
 
   div {
     background: lightblue;
@@ -49,7 +48,7 @@
   }
 }
 
-:host.is-first > div {
+:host.first > div {
   border: 2px solid black;
 }
 
