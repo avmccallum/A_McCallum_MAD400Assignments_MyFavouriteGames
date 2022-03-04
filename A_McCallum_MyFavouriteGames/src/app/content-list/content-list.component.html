@@ -1,4 +1,6 @@
 <!--<app-content-card *ngFor="let item of contentList; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>-->
+<app-create-content></app-create-content>
+
 <div>
   <input type="text" #searchItem>
   <button type="button" (click)="showResult(searchItem.value)">Find Item</button>

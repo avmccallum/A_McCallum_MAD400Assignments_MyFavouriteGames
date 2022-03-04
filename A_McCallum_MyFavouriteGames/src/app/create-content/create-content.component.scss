@@ -1,0 +1,31 @@
+:host {
+
+  div {
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+    margin-top: 2em;
+    border: 1px solid orange;
+
+    h1 {
+      text-align: center;
+    }
+
+    label{
+      //display: inline-block;
+      float: left;
+      //clear: left;
+      width: 250px;
+      //text-align: right;
+    }
+    input {
+      display: inline-block;
+      float: right;
+    }
+
+    button {
+      display: block;
+    }
+  }
+
+}
