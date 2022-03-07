@@ -1,6 +1,6 @@
 import { Content } from "./content-interface";
 
-export const CONTENT_LIST: Content[] = [{
+export const CONTENT: Content[] = [{
   id: 1,
   title: "The Legend of Zelda: Breath of the Wild",
   description: "Forget everything you know about The Legend of Zelda games. Step into a world of discovery, exploration, and adventure in The Legend of Zelda: Breath of the Wild, a boundary-breaking new game in the acclaimed series. Travel across vast fields, through forests, and to mountain peaks as you discover what has become of the kingdom of Hyrule in this stunning Open-Air Adventure.",

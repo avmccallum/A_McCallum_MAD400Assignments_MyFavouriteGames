@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Content} from "../helper-files/content-interface";
+import { GameService } from '../services/game.service';
 
 @Component({
   selector: 'app-content-list',
@@ -7,15 +8,16 @@ import {Content} from "../helper-files/content-interface";
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
-  contentList: Content[] = [];
+  contentList: Content[];
 
-  constructor() {
-
+  constructor(private gameService: GameService) {
+    this.contentList = [];
   }
 
   ngOnInit(): void {
-
-
+    this.gameService.getContentObs().subscribe(contentArray => {
+      this.contentList = contentArray
+    })
   }
 
   showResult(searchItem: string): string {

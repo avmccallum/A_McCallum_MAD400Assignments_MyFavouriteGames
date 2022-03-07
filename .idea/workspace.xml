@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8f9482b-c2fd-4b0d-81e3-1125acbfee9b" name="Changes" comment="" />
+    <list default="true" id="c8f9482b-c2fd-4b0d-81e3-1125acbfee9b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/content-list/content-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/content-list/content-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/helper-files/contentDb.ts" beforeDir="false" afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/helper-files/contentDb.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,7 +48,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1646670153367</updated>
-      <workItem from="1646670156635" duration="10977000" />
+      <workItem from="1646670156635" duration="12448000" />
+      <workItem from="1646684023966" duration="1271000" />
     </task>
     <servers />
   </component>

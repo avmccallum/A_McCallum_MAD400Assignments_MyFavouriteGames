@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Content } from './helper-files/content-interface';
+import { GameService } from './services/game.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'A_McCallum_MyFavouriteGames';
+  // content?: Content;
+  //
+  // constructor(private gameService: GameService) {
+  //   this.content = undefined;
+  // }
+  //
+  // ngOnInit(): void {
+  //   this.gameService.getItem(2).subscribe(content => this.content = content)
+  // }
+
 }
