@@ -1,14 +1,30 @@
 <div>
   <form #form>
     <h1>Add Game</h1>
-    ID: <input type="number" #id > <br>
-    Title: <input type="text" #title> <br>
-    Description: <input type="text" #description> <br>
-    Creator: <input type="text" #creator> <br>
-    Type: <input type="text" #type> <br>
-    Tags (comma separated list): <input type="text" #tags> <br>
-    Image URL: <input type="text" #imgUrl> <br>
-    <button type="button" (click)="addContent(id.value, title.value, description.value, creator.value, imgUrl.value, type.value, tags.value); form.reset()">Submit</button>
+    <div>
+      ID: <input type="number" #id >
+    </div>
+    <div>
+      Title: <input type="text" #title>
+    </div>
+    <div>
+      Description: <input type="text" #description>
+    </div>
+    <div>
+      Creator: <input type="text" #creator>
+    </div>
+    <div>
+      Type: <input type="text" #type>
+    </div>
+    <div>
+      Tags (comma separated list): <input type="text" #tags>
+    </div>
+    <div>
+      Image URL: <input type="text" #imgUrl>
+    </div>
+    <div id="button">
+      <button type="button" (click)="addContent(id.value, title.value, description.value, creator.value, imgUrl.value, type.value, tags.value); form.reset()">Submit</button>
+    </div>
     <p *ngIf="failMessage" class="error">{{ failMessage }}</p>
   </form>
 </div>

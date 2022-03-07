@@ -1,19 +1,33 @@
 :host {
 
   div {
-    margin-right: auto;
-    margin-left: auto;
-    width: 50%;
-    margin-top: 2em;
 
     h1 {
       text-align: center;
+      font-size: 1.75em;
     }
 
     p.error {
       color: red;
       font-weight: bold;
+      text-align: center;
     }
+
+    div {
+      margin: 0.5em auto;
+      width: 50%;
+
+      input {
+        width: 50%;
+        float: right;
+      }
+    }
+
+    button {
+      margin: auto;
+      display: block;
+    }
+
   }
 
 }
