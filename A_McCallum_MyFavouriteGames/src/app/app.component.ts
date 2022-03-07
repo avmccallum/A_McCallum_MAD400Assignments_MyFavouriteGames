@@ -9,14 +9,14 @@ import { GameService } from './services/game.service';
 })
 export class AppComponent {
   title = 'A_McCallum_MyFavouriteGames';
-  // content?: Content;
-  //
-  // constructor(private gameService: GameService) {
-  //   this.content = undefined;
-  // }
-  //
-  // ngOnInit(): void {
-  //   this.gameService.getItem(2).subscribe(content => this.content = content)
-  // }
+  content?: Content;
+
+  constructor(private gameService: GameService) {
+    this.content = undefined;
+  }
+
+  ngOnInit(): void {
+    this.gameService.getItem(2).subscribe(content => this.content = content)
+  }
 
 }
