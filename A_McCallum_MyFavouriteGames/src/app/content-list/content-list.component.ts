@@ -10,7 +10,6 @@ export class ContentListComponent implements OnInit {
   contentList: Content[] = [];
 
   constructor() {
-
   }
 
   ngOnInit(): void {
@@ -64,12 +63,14 @@ export class ContentListComponent implements OnInit {
       imgURL: "https://nintendoeverything.com/wp-content/uploads/Pokemon-Legends-Arceus-update-1.0.2.jpg",
       type: "Switch"
     }];
-
   }
 
   addItem(newItem: Content) {
+
+
     this.contentList.push(newItem)
     this.contentList = [...this.contentList]
+    // promise.then(success => console.log(success)).catch(fail => console.log(fail))
   }
 
   showResult(searchItem: string): string {
