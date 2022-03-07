@@ -37,7 +37,7 @@ export class CreateContentComponent implements OnInit {
       description: description,
       creator: creator,
       imgURL: imgUrl,
-      type: type,
+      type: type?.toUpperCase(),
       tags: tagsArray
     }
 

@@ -8,4 +8,4 @@
 
 <app-content-card *ngFor="let item of (contentList | typeFilter); first as isFirst" [content]="item" [class.first]="isFirst"></app-content-card>
 <app-content-card *ngFor="let item of (contentList | typeFilter:'PC'); first as isFirst" [content]="item" [class.first]="isFirst"></app-content-card>
-<app-content-card *ngFor="let item of (contentList | typeFilter:'Switch'); first as isFirst" [content]="item" [class.first]="isFirst"></app-content-card>
+<app-content-card *ngFor="let item of (contentList | typeFilter:'SWITCH'); first as isFirst" [content]="item" [class.first]="isFirst"></app-content-card>
