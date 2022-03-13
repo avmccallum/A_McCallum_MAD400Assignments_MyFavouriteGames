@@ -1,3 +1,7 @@
+<div>
+  <input type="number" #item>
+  <button type="button" (click)="selectItem(item.value)">Load Item</button>
+</div>
 <app-content-card [content]="content" class="top-card" ></app-content-card>
 <app-messages></app-messages>
 <app-content-list></app-content-list>

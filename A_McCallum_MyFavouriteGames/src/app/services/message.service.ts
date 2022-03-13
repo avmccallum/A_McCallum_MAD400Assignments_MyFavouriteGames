@@ -13,4 +13,8 @@ export class MessageService {
   clear() {
     this.messages = [];
   }
+
+  removeLast() {
+    this.messages.pop()
+  }
 }
