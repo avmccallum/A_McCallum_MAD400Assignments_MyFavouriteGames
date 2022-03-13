@@ -52,4 +52,6 @@
   border: 2px solid black;
 }
 
-
+:host.top-card > div {
+  box-shadow: 5px 5px dimgray;
+}

@@ -12,7 +12,6 @@ export class AppComponent {
   content?: Content;
 
   constructor(private gameService: GameService) {
-    this.content = undefined;
   }
 
   ngOnInit(): void {
