@@ -29,10 +29,11 @@ export class GameService {
 
   checkIndex(id: number): boolean {
     if(CONTENT[id]) {
+      this.messageService.clear()
       return true
     }
     this.messageService.removeLast()
-    this.messageService.add(`Content could not be loaded from ID: ${id}`)
+    this.messageService.add(`No content at ID: ${id}`)
     return false
   }
 

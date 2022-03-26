@@ -1,7 +1,7 @@
 <div>
   <form #form>
     <div>
-      ID: <input type="text" #id>
+      ID: <input type="text" #id (focusout)="verifyID(id.value)">
     </div>
     <div>
       Title: <input type="text" #title>

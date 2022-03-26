@@ -13,10 +13,20 @@ export class ModifyContentComponent implements OnInit {
   failMessage?: string;
   newContent?: Content;
   buttonMssg = "Add Item";
+  verifiedNum?: number;
 
   constructor(private gameService: GameService) { }
 
   ngOnInit(): void {
+  }
+
+  verifyID(id: string) {
+    if(id) {
+      this.verifiedNum = parseInt(id)
+      if(this.gameService.checkIndex(this.verifiedNum)) {
+        this.buttonMssg = "Update Item"
+      }
+    }
   }
 
   addUpdateContent(id: string, title: string, description: string, creator: string, imgUrl?: string, type?: string, tags?: string) {
@@ -48,20 +58,15 @@ export class ModifyContentComponent implements OnInit {
       this.failMessage = "Could not add/update item";
     }
 
-    let verifiedNum = parseInt(id)
-
     if(this.newContent) {
-      if(verifiedNum) {
-        if(this.gameService.checkIndex(verifiedNum)) {
-          this.buttonMssg = "Update Item"
-          this.newContent.id = verifiedNum
-          this.updateContentEvent.emit(this.newContent);
-        } else {
-          this.failMessage = "Could not update item"
-        }
+      if(this.verifiedNum) {
+        this.newContent.id = this.verifiedNum
+        this.updateContentEvent.emit(this.newContent);
       } else {
         this.newContentEvent.emit(this.newContent);
       }
     }
+    this.buttonMssg = "Add Item"
+    this.verifiedNum = undefined;
   }
 }
