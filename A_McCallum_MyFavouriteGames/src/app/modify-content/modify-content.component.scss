@@ -1,0 +1,29 @@
+:host {
+
+  div {
+    font-family: "Bahnschrift", sans-serif;
+
+    p.error {
+      color: red;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    div {
+      margin: 0.5em auto;
+      width: 45%;
+
+      input {
+        width: 50%;
+        float: right;
+      }
+    }
+
+    button {
+      margin: auto;
+      display: block;
+    }
+
+  }
+
+}

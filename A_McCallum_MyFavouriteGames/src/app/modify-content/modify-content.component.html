@@ -1,0 +1,26 @@
+<div>
+  <form #form>
+    <div>
+      Title: <input type="text" #title>
+    </div>
+    <div>
+      Description: <input type="text" #description>
+    </div>
+    <div>
+      Creator: <input type="text" #creator>
+    </div>
+    <div>
+      Type: <input type="text" #type>
+    </div>
+    <div>
+      Tags (comma separated list): <input type="text" #tags>
+    </div>
+    <div>
+      Image URL: <input type="text" #imgUrl>
+    </div>
+    <div id="button">
+      <button type="button" (click)="addContent(title.value, description.value, creator.value, imgUrl.value, type.value, tags.value); form.reset()">Add Item</button>
+    </div>
+    <p *ngIf="failMessage" class="error">{{ failMessage }}</p>
+  </form>
+</div>

@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Content } from '../helper-files/content-interface';
@@ -9,7 +10,16 @@ import {MessageService} from "./message.service";
 })
 export class GameService {
 
-  constructor(private messageService: MessageService) { }
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-type': 'application/json'})
+  };
+
+  constructor(private http: HttpClient, private messageService: MessageService) { }
+
+  getContent(): Observable<Content[]> {
+    this.messageService.add(`Content array loaded!`)
+    return this.http.get<Content[]>("api/content");
+  }
 
   getItem(id: number): Observable<Content> {
     this.messageService.removeLast()
@@ -26,8 +36,8 @@ export class GameService {
     return false
   }
 
-  getContentObs(): Observable<Content[]> {
-    this.messageService.add(`Content array loaded!`)
-    return of(CONTENT)
+  addContent(newContent: Content): Observable<Content> {
+    console.log("adding new item " + newContent)
+    return this.http.post<Content>("api/content", newContent, this.httpOptions)
   }
 }

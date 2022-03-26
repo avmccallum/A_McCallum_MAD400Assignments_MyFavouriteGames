@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8f9482b-c2fd-4b0d-81e3-1125acbfee9b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/modify-content/modify-content.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/modify-content/modify-content.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/modify-content/modify-content.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/modify-content/modify-content.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/services/in-memory-data.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/services/in-memory-data.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/content-list/content-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/content-list/content-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/content-list/content-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/content-list/content-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/helper-files/content-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/helper-files/content-interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/helper-files/contentDb.ts" beforeDir="false" afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/helper-files/contentDb.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/services/game.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/A_McCallum_MyFavouriteGames/src/app/services/game.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,11 +33,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2645jUPE6c1yYUi4bHMNsa3ro57" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -35,7 +51,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="E:\Program Files\JetBrains\PhpStorm 2021.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -53,5 +69,19 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
