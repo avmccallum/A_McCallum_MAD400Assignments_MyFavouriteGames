@@ -7,7 +7,7 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./modify-content.component.scss']
 })
 export class ModifyContentComponent implements OnInit {
-  @Output() newContentEvent: EventEmitter<Content> = new EventEmitter<Content>();
+  @Output() newContentEvent = new EventEmitter<Content>();
   failMessage?: string;
   newContent?: Content;
 
@@ -47,7 +47,6 @@ export class ModifyContentComponent implements OnInit {
 
     if(this.newContent) {
       this.newContentEvent.emit(this.newContent);
-      console.log("emitting content " + this.newContent.title)
     }
   }
 

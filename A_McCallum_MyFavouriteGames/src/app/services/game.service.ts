@@ -37,7 +37,8 @@ export class GameService {
   }
 
   addContent(newContent: Content): Observable<Content> {
-    console.log("adding new item " + newContent)
+    this.messageService.removeLast()
+    this.messageService.add(`Item added successfully!`)
     return this.http.post<Content>("api/content", newContent, this.httpOptions)
   }
 }

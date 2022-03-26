@@ -1,5 +1,5 @@
 <!--<app-content-card *ngFor="let item of contentList; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>-->
-<app-modify-content></app-modify-content>
+<app-modify-content (newContentEvent)="addContentToList($event)"></app-modify-content>
 <div>
   <input type="text" #searchItem>
   <button type="button" (click)="showResult(searchItem.value)">Find Item</button>
@@ -8,4 +8,4 @@
 
 <app-content-card *ngFor="let item of (contentList | typeFilter); first as isFirst" [content]="item" [class.first]="isFirst"></app-content-card>
 <app-content-card *ngFor="let item of (contentList | typeFilter:'PC'); first as isFirst" [content]="item" [class.first]="isFirst"></app-content-card>
-<app-content-card *ngFor="let item of (contentList | typeFilter:'Switch'); first as isFirst" [content]="item" [class.first]="isFirst"></app-content-card>
+<app-content-card *ngFor="let item of (contentList | typeFilter:'SWITCH'); first as isFirst" [content]="item" [class.first]="isFirst"></app-content-card>
