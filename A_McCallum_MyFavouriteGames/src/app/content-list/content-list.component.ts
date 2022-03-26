@@ -31,6 +31,12 @@ export class ContentListComponent implements OnInit {
       });
   }
 
+  updateContentInList(content: Content) {
+    this.gameService.updateContent(content).subscribe(() => {
+      this.getContentFromServer()
+    })
+  }
+
   showResult(searchItem: string): string {
     let resultText = document.querySelector('.search-result');
     let searchResult = this.contentList.find(el => el.title.toUpperCase() === searchItem.toUpperCase());

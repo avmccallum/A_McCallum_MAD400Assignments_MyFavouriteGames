@@ -1,6 +1,9 @@
 <div>
   <form #form>
     <div>
+      ID: <input type="text" #id>
+    </div>
+    <div>
       Title: <input type="text" #title>
     </div>
     <div>
@@ -19,7 +22,7 @@
       Image URL: <input type="text" #imgUrl>
     </div>
     <div id="button">
-      <button type="button" (click)="addContent(title.value, description.value, creator.value, imgUrl.value, type.value, tags.value); form.reset()">Add Item</button>
+      <button type="button" (click)="addUpdateContent(id.value, title.value, description.value, creator.value, imgUrl.value, type.value, tags.value); form.reset()">{{ buttonMssg }}</button>
     </div>
     <p *ngIf="failMessage" class="error">{{ failMessage }}</p>
   </form>

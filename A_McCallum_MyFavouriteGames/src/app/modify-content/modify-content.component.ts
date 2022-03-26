@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
+import { GameService } from '../services/game.service';
 
 @Component({
   selector: 'app-modify-content',
@@ -8,15 +9,17 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ModifyContentComponent implements OnInit {
   @Output() newContentEvent = new EventEmitter<Content>();
+  @Output() updateContentEvent = new EventEmitter<Content>();
   failMessage?: string;
   newContent?: Content;
+  buttonMssg = "Add Item";
 
-  constructor() { }
+  constructor(private gameService: GameService) { }
 
   ngOnInit(): void {
   }
 
-  addContent(title: string, description: string, creator: string, imgUrl?: string, type?: string, tags?: string) {
+  addUpdateContent(id: string, title: string, description: string, creator: string, imgUrl?: string, type?: string, tags?: string) {
     this.failMessage = undefined;
     if (type == "") {
       type = undefined
@@ -42,12 +45,23 @@ export class ModifyContentComponent implements OnInit {
 
     if(title == "" || description == "" || creator == "") {
       this.newContent = undefined
-      this.failMessage = "Could not add content";
+      this.failMessage = "Could not add/update item";
     }
+
+    let verifiedNum = parseInt(id)
 
     if(this.newContent) {
-      this.newContentEvent.emit(this.newContent);
+      if(verifiedNum) {
+        if(this.gameService.checkIndex(verifiedNum)) {
+          this.buttonMssg = "Update Item"
+          this.newContent.id = verifiedNum
+          this.updateContentEvent.emit(this.newContent);
+        } else {
+          this.failMessage = "Could not update item"
+        }
+      } else {
+        this.newContentEvent.emit(this.newContent);
+      }
     }
   }
-
 }
