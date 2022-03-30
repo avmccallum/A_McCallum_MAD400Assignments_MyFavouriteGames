@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { GameService } from '../services/game.service';
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-modify-content',
@@ -12,10 +13,16 @@ export class ModifyContentComponent implements OnInit {
   @Output() updateContentEvent = new EventEmitter<Content>();
   failMessage?: string;
   newContent?: Content;
-  buttonMssg = "Add Item";
+  buttonMsg = "Add Item";
   verifiedNum?: number;
 
   constructor(private gameService: GameService) { }
+
+  openDialog() {
+    // const dialogRef = this.dialog.open(ModifyContentComponent, {
+    //
+    // });
+  }
 
   ngOnInit(): void {
   }
@@ -24,7 +31,7 @@ export class ModifyContentComponent implements OnInit {
     if(id) {
       this.verifiedNum = parseInt(id)
       if(this.gameService.checkIndex(this.verifiedNum)) {
-        this.buttonMssg = "Update Item"
+        this.buttonMsg = "Update Item"
       }
     }
   }
@@ -66,7 +73,7 @@ export class ModifyContentComponent implements OnInit {
         this.newContentEvent.emit(this.newContent);
       }
     }
-    this.buttonMssg = "Add Item"
+    this.buttonMsg = "Add Item"
     this.verifiedNum = undefined;
   }
 }

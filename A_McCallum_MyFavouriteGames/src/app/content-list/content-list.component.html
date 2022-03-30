@@ -1,8 +1,10 @@
 <!--<app-content-card *ngFor="let item of contentList; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>-->
 <app-modify-content (newContentEvent)="addContentToList($event)" (updateContentEvent)="updateContentInList($event)"></app-modify-content>
 <div>
-  <input type="text" #searchItem>
-  <button type="button" (click)="showResult(searchItem.value)">Find Item</button>
+  <mat-form-field>
+    <input matInput #searchItem placeholder="Search Title">
+  </mat-form-field>
+  <button mat-flat-button color="accent" (click)="showResult(searchItem.value)">Find Item</button>
   <p class="search-result">{{ showResult(searchItem.value) }}</p>
 </div>
 

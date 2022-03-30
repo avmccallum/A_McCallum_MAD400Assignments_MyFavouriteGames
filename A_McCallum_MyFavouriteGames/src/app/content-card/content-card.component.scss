@@ -3,28 +3,27 @@
   width: 45%;
   margin: 1em;
 
-  div {
+  mat-card {
     background: lightblue;
     border: 1px solid black;
     border-radius: 1.5em;
-    padding: 0 1em 1em;
     width: 50%;
     margin-right: auto;
     margin-left: auto;
 
-    h1 {
+    mat-card-title {
       font-size: 2em;
     }
 
     img {
-      max-width: 100%;
+      max-width: 90%;
       margin-right: auto;
       margin-left: auto;
       display: block;
       border-radius: 1.5em;
     }
 
-    section {
+    mat-card-content {
       position: relative;
 
       p.description {
@@ -39,19 +38,19 @@
     }
   }
 
-  div.PC {
+  mat-card.PC {
     background: pink;
   }
 
-  div.SWITCH {
+  mat-card.SWITCH {
     background: palegoldenrod;
   }
 }
 
-:host.first > div {
+:host.first > mat-card {
   border: 2px solid black;
 }
 
-:host.top-card > div {
+:host.top-card > mat-card {
   box-shadow: 5px 5px dimgray;
 }

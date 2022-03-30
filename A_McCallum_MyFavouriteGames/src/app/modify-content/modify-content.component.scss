@@ -9,19 +9,22 @@
       text-align: center;
     }
 
-    div {
+    form {
+      width: 50%;
       margin: 0.5em auto;
-      width: 45%;
+      position: relative;
 
-      input {
-        width: 50%;
-        float: right;
+      mat-form-field {
+        width: 45%;
       }
     }
 
+
     button {
       margin: auto;
-      display: block;
+      display: inline-block;
+      position: absolute;
+      right: 30%;
     }
 
   }

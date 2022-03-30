@@ -1,29 +1,35 @@
 <div>
   <form #form>
-    <div>
-      ID: <input type="text" #id (focusout)="verifyID(id.value)">
-    </div>
-    <div>
-      Title: <input type="text" #title>
-    </div>
-    <div>
-      Description: <input type="text" #description>
-    </div>
-    <div>
-      Creator: <input type="text" #creator>
-    </div>
-    <div>
-      Type: <input type="text" #type>
-    </div>
-    <div>
-      Tags (comma separated list): <input type="text" #tags>
-    </div>
-    <div>
-      Image URL: <input type="text" #imgUrl>
-    </div>
-    <div id="button">
-      <button type="button" (click)="addUpdateContent(id.value, title.value, description.value, creator.value, imgUrl.value, type.value, tags.value); form.reset()">{{ buttonMssg }}</button>
-    </div>
+    <mat-form-field>
+      <mat-label>ID: </mat-label>
+      <input matInput #id (focusout)="verifyID(id.value)">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Title: </mat-label>
+      <input matInput #title>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Description: </mat-label>
+      <input matInput #description>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Creator: </mat-label>
+      <input matInput #creator>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Type: </mat-label>
+      <input matInput #type>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Tags (comma separated list): </mat-label>
+      <input matInput #tags>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Image URL: </mat-label>
+      <input matInput #imgUrl>
+    </mat-form-field>
+    <button mat-flat-button color="accent" (click)="addUpdateContent(id.value, title.value, description.value, creator.value, imgUrl.value, type.value, tags.value); form.reset()">{{ buttonMsg }}</button>
     <p *ngIf="failMessage" class="error">{{ failMessage }}</p>
   </form>
 </div>
+<button mat-flat-button color="accent" (click)="openDialog()">Add New Content</button>
