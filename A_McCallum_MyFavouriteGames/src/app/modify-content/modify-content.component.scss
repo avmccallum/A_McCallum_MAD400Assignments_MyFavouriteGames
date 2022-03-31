@@ -1,32 +1,8 @@
 :host {
 
-  div {
-    font-family: "Bahnschrift", sans-serif;
-
-    p.error {
-      color: red;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    form {
-      width: 50%;
-      margin: 0.5em auto;
-      position: relative;
-
-      mat-form-field {
-        width: 45%;
-      }
-    }
-
-
-    button {
-      margin: auto;
-      display: inline-block;
-      position: absolute;
-      right: 30%;
-    }
-
+  button {
+    display: block;
+    margin: auto;
   }
 
 }

@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Add Game</h1>
+<div mat-dialog-content>
+  <form #form>
+    <mat-form-field>
+      <mat-label>ID: </mat-label>
+      <input disabled matInput #id (focusout)="verifyID(id.value)">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Title: </mat-label>
+      <input matInput #title>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Description: </mat-label>
+      <input matInput #description>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Creator: </mat-label>
+      <input matInput #creator>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Type: </mat-label>
+      <input matInput #type>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Tags (comma separated list): </mat-label>
+      <input matInput #tags>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Image URL: </mat-label>
+      <input matInput #imgUrl>
+    </mat-form-field>
+    <button mat-flat-button color="accent" (click)="addUpdateContent(id.value, title.value, description.value, creator.value, imgUrl.value, type.value, tags.value); form.reset()">{{ buttonMsg }}</button>
+    <button mat-flat-button color="warn" mat-dialog-close="">Cancel</button>
+    <p *ngIf="failMessage" class="error">{{ failMessage }}</p>
+  </form>
+</div>
