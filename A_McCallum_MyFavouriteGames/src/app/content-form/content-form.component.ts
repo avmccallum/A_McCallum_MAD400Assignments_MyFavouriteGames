@@ -23,7 +23,7 @@ export class ContentFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.typeList = this.data.types.sort()
+    this.typeList = this.data.types.filter(Boolean).sort()
   }
 
   close() {
@@ -41,9 +41,9 @@ export class ContentFormComponent implements OnInit {
 
   addUpdateContent(id: string, title: string, description: string, creator: string, imgUrl?: string, type?: string, tags?: string) {
     this.failMessage = undefined;
-    if (type == "") {
-      type = undefined
-    }
+    // if (type == "") {
+    //   type = undefined
+    // }
 
     let tagsArray = tags?.split(", ")
     if (tagsArray) {

@@ -8,7 +8,21 @@
   <p class="search-result">{{ showResult(searchItem.value) }}</p>
 </div>
 
-<app-content-card *ngFor="let item of (contentList | typeFilter); first as isFirst" [content]="item" [class.first]="isFirst"></app-content-card>
-<app-content-card *ngFor="let item of (contentList | typeFilter:'PC'); first as isFirst" [content]="item" [class.first]="isFirst"></app-content-card>
-<app-content-card *ngFor="let item of (contentList | typeFilter:'SWITCH'); first as isFirst" [content]="item" [class.first]="isFirst"></app-content-card>
+<mat-expansion-panel *ngFor="let type of typeList">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{ type ?? "TYPELESS" }} Games
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <app-content-card *ngFor="let item of (contentList | typeFilter: type ?? null); first as isFirst" [content]="item" [class.first]="isFirst"></app-content-card>
+</mat-expansion-panel>
+<!--<mat-expansion-panel>-->
+<!--  <mat-expansion-panel-header>-->
+<!--    <mat-panel-title>-->
+<!--      -->
+<!--    </mat-panel-title>-->
+<!--  </mat-expansion-panel-header>-->
+<!--</mat-expansion-panel>-->
+<!--  <app-content-card *ngFor="let item of (contentList | typeFilter:'PC'); first as isFirst" [content]="item" [class.first]="isFirst"></app-content-card>-->
+<!--<app-content-card *ngFor="let item of (contentList | typeFilter:'SWITCH'); first as isFirst" [content]="item" [class.first]="isFirst"></app-content-card>-->
 <!--(newContentEvent)="addContentToList($event)" (updateContentEvent)="updateContentInList($event)"-->

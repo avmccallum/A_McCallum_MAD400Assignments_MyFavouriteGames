@@ -9,7 +9,7 @@ import { GameService } from '../services/game.service';
 })
 export class ContentListComponent implements OnInit {
   contentList: Content[];
-  typeList: string[];
+  typeList: any[];
 
   constructor(private gameService: GameService) {
     this.contentList = [];
@@ -29,7 +29,7 @@ export class ContentListComponent implements OnInit {
 
   getTypes() {
     setTimeout(() => {
-      this.contentList.forEach(el => this.typeList.push(el.type ?? ''))
+      this.contentList.forEach(el => this.typeList.push(el.type ?? undefined))
       this.typeList = [...new Set(this.typeList)]
     }, 500)
   }
