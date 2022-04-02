@@ -1,6 +1,7 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Inject, OnInit, Optional, Output} from '@angular/core';
 import {Content} from "../helper-files/content-interface";
 import {GameService} from "../services/game.service";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-content-form',
@@ -8,26 +9,32 @@ import {GameService} from "../services/game.service";
   styleUrls: ['./content-form.component.scss']
 })
 export class ContentFormComponent implements OnInit {
-  @Output() newContentEvent = new EventEmitter<Content>();
-  @Output() updateContentEvent = new EventEmitter<Content>();
+  @Output() formAddEvent = new EventEmitter<Content>();
+  @Output() formUpdateEvent = new EventEmitter<Content>();
   failMessage?: string;
   newContent?: Content;
   buttonMsg = "Add Item";
-  verifiedNum?: number;
+  // verifiedNum?: number;
 
-  constructor(private gameService: GameService) { }
+  constructor(public dialogRef: MatDialogRef<ContentFormComponent>) {
+
+  }
 
   ngOnInit(): void {
   }
 
-  verifyID(id: string) {
-    if(id) {
-      this.verifiedNum = parseInt(id)
-      if(this.gameService.checkIndex(this.verifiedNum)) {
-        this.buttonMsg = "Update Item"
-      }
-    }
+  close() {
+    this.dialogRef.close({content: this.newContent});
   }
+
+  // verifyID(id: string) {
+  //   if(id) {
+  //     this.verifiedNum = parseInt(id)
+  //     if(this.gameService.checkIndex(this.verifiedNum)) {
+  //       this.buttonMsg = "Update Item"
+  //     }
+  //   }
+  // }
 
   addUpdateContent(id: string, title: string, description: string, creator: string, imgUrl?: string, type?: string, tags?: string) {
     this.failMessage = undefined;
@@ -55,7 +62,7 @@ export class ContentFormComponent implements OnInit {
 
     if(title == "" || description == "" || creator == "") {
       this.newContent = undefined
-      // this.failMessage = "Could not add/update item";
+      this.failMessage = "Could not add item";
     }
 
     if(this.newContent) {
@@ -63,11 +70,14 @@ export class ContentFormComponent implements OnInit {
       //   this.newContent.id = this.verifiedNum
       //   this.updateContentEvent.emit(this.newContent);
       // } else {
-        this.newContentEvent.emit(this.newContent);
+
+      this.formAddEvent.emit(this.newContent);
+      this.close();
       // }
     }
     // this.buttonMsg = "Add Item"
     // this.verifiedNum = undefined;
+
   }
 
 }

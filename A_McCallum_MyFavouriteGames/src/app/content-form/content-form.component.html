@@ -3,7 +3,7 @@
   <form #form>
     <mat-form-field>
       <mat-label>ID: </mat-label>
-      <input disabled matInput #id (focusout)="verifyID(id.value)">
+      <input disabled matInput #id>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Title: </mat-label>
@@ -29,8 +29,9 @@
       <mat-label>Image URL: </mat-label>
       <input matInput #imgUrl>
     </mat-form-field>
-    <button mat-flat-button color="accent" (click)="addUpdateContent(id.value, title.value, description.value, creator.value, imgUrl.value, type.value, tags.value); form.reset()">{{ buttonMsg }}</button>
-    <button mat-flat-button color="warn" mat-dialog-close="">Cancel</button>
+    <button type="button" mat-flat-button color="accent" (click)="addUpdateContent(id.value, title.value, description.value, creator.value, imgUrl.value, type.value, tags.value); form.reset()">{{ buttonMsg }}</button>
+    <button type="button" mat-flat-button color="warn" (click)="close()">Cancel</button>
     <p *ngIf="failMessage" class="error">{{ failMessage }}</p>
   </form>
 </div>
+<!--(focusout)="verifyID(id.value)"-->

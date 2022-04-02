@@ -25,8 +25,16 @@ export class ModifyContentComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(content => {
-      this.newContentEvent.emit(content)
+      this.newContent = content.content
+      if(this.newContent) {
+        this.addContent(this.newContent)
+      }
     })
+  }
+
+  addContent(newContent: Content) {
+    console.log(newContent)
+    this.newContentEvent.emit(newContent)
   }
 
 }

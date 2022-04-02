@@ -25,9 +25,12 @@ export class ContentListComponent implements OnInit {
   }
 
   addContentToList(newContent: Content) {
+    console.log("adding to list")
     this.gameService.addContent(newContent).subscribe(newContentFromServer => {
+      console.log(this.contentList)
         this.contentList.push(newContentFromServer);
         this.contentList = [...this.contentList]
+        console.log(this.contentList)
       });
   }
 
