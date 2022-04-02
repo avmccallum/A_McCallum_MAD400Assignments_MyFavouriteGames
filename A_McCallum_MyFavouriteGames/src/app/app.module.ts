@@ -18,6 +18,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import {MatDialogModule} from "@angular/material/dialog";
 import { ContentFormComponent } from './content-form/content-form.component';
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 @NgModule({
   declarations: [
@@ -30,20 +31,21 @@ import { ContentFormComponent } from './content-form/content-form.component';
     ModifyContentComponent,
     ContentFormComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-      dataEncapsulation: false,
-      delay: 500
-    }),
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCardModule,
-    MatDialogModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+            dataEncapsulation: false,
+            delay: 500
+        }),
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatCardModule,
+        MatDialogModule,
+        MatAutocompleteModule
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })

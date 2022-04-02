@@ -1,5 +1,5 @@
 <!--<app-content-card *ngFor="let item of contentList; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>-->
-<app-modify-content (newContentEvent)="addContentToList($event)"></app-modify-content>
+<app-modify-content (newContentEvent)="addContentToList($event)" [types]="typeList"></app-modify-content>
 <div>
   <mat-form-field>
     <input matInput #searchItem placeholder="Search Title">

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Inject, OnInit, Optional, Output} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnInit, Optional, Output} from '@angular/core';
 import {Content} from "../helper-files/content-interface";
 import {GameService} from "../services/game.service";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
@@ -9,6 +9,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
   styleUrls: ['./content-form.component.scss']
 })
 export class ContentFormComponent implements OnInit {
+  @Input() typeList?: string[];
   @Output() formAddEvent = new EventEmitter<Content>();
   @Output() formUpdateEvent = new EventEmitter<Content>();
   failMessage?: string;
@@ -16,11 +17,13 @@ export class ContentFormComponent implements OnInit {
   buttonMsg = "Add Item";
   // verifiedNum?: number;
 
-  constructor(public dialogRef: MatDialogRef<ContentFormComponent>) {
+  constructor(public dialogRef: MatDialogRef<ContentFormComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) {
 
   }
 
   ngOnInit(): void {
+    this.typeList = this.data.types.sort()
   }
 
   close() {

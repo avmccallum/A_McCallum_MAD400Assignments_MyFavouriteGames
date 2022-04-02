@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { GameService } from '../services/game.service';
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
@@ -10,6 +10,7 @@ import {ContentFormComponent} from "../content-form/content-form.component";
   styleUrls: ['./modify-content.component.scss']
 })
 export class ModifyContentComponent implements OnInit {
+  @Input() types?: string[];
   @Output() newContentEvent = new EventEmitter<Content>();
   newContent?: Content;
 
@@ -20,8 +21,8 @@ export class ModifyContentComponent implements OnInit {
 
   openDialog() {
     const dialogRef = this.dialog.open(ContentFormComponent, {
-      width: '60%'
-
+      width: '60%',
+      data: {types: this.types}
     });
 
     dialogRef.afterClosed().subscribe(content => {

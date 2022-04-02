@@ -9,13 +9,16 @@ import { GameService } from '../services/game.service';
 })
 export class ContentListComponent implements OnInit {
   contentList: Content[];
+  typeList: string[];
 
   constructor(private gameService: GameService) {
     this.contentList = [];
+    this.typeList = [];
   }
 
   ngOnInit(): void {
     this.getContentFromServer();
+    this.getTypes()
   }
 
   getContentFromServer() {
@@ -24,13 +27,17 @@ export class ContentListComponent implements OnInit {
     });
   }
 
+  getTypes() {
+    setTimeout(() => {
+      this.contentList.forEach(el => this.typeList.push(el.type ?? ''))
+      this.typeList = [...new Set(this.typeList)]
+    }, 500)
+  }
+
   addContentToList(newContent: Content) {
-    console.log("adding to list")
     this.gameService.addContent(newContent).subscribe(newContentFromServer => {
-      console.log(this.contentList)
         this.contentList.push(newContentFromServer);
         this.contentList = [...this.contentList]
-        console.log(this.contentList)
       });
   }
 

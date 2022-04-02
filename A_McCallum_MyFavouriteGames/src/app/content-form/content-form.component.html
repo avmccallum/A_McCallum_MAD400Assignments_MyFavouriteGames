@@ -19,7 +19,10 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label>Type: </mat-label>
-      <input matInput #type>
+      <input matInput #type type="text" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let type of typeList" [value]="type">{{ type }}</mat-option>
+      </mat-autocomplete>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Tags (comma separated list): </mat-label>
