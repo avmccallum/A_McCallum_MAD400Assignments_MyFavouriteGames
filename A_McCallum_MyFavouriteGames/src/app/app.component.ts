@@ -9,22 +9,13 @@ import { GameService } from './services/game.service';
 })
 export class AppComponent {
   title = 'A_McCallum_MyFavouriteGames';
-  content?: Content;
-  verifiedNumber: number = -1
 
-  constructor(private gameService: GameService) {
+
+  constructor() {
   }
 
   ngOnInit(): void {
   }
 
-  selectItem(id: string) {
-    let validNum = parseInt(id)
-    if(validNum >= 0) {
-      this.verifiedNumber = validNum
-      if(this.gameService.checkIndex(this.verifiedNumber)) {
-        this.gameService.getItem(this.verifiedNumber).subscribe(content => this.content = content)
-      }
-    }
-  }
+
 }

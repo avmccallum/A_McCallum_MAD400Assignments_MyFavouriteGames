@@ -2,7 +2,8 @@
 <mat-card [appHoverAffect]="cardFlag" *ngIf="content" class="{{ content.type }}">
   <mat-card-title>{{ content.title }}</mat-card-title>
   <mat-card-content>
-    <p class="description"> {{ content.description }}</p>
+<!--    <p class="description"> {{ content.description }}</p>-->
+    <a [routerLink]="['/list', content.id]" routerLinkActive="active">See Details</a>
     <p>Creator: {{ content.creator }}</p>
     <p [appHoverAffect]="typeFlag" *ngIf="content.type">Type: {{ content.type }}</p>
     <ul *ngIf="content.tags">

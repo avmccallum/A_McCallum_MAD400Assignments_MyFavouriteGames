@@ -1,0 +1,61 @@
+:host {
+  font-family: "Bahnschrift", sans-serif;
+  width: 45%;
+  margin: 1em;
+
+  mat-card {
+
+    mat-card-title {
+      font-size: 2em;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+
+    img {
+      max-width: 50%;
+      margin-right: auto;
+      margin-left: auto;
+      display: block;
+      border-radius: 1.5em;
+    }
+
+    mat-card-content {
+      border: 1px solid black;
+      background: darkseagreen;
+      position: relative;
+      border-radius: 1.5em;
+      width: 50%;
+      margin-right: auto;
+      margin-left: auto;
+      box-shadow: 5px 5px dimgray;
+      padding: 1em;
+
+
+      p.description {
+        width: 65%;
+      }
+
+      ul {
+        position: absolute;
+        top: -1em;
+        right: 1em;
+        padding: 1em;
+
+      }
+    }
+  }
+
+  div {
+    text-align: center;
+    width: 25%;
+    margin: 1em auto;
+  }
+
+  mat-card.PC mat-card-content {
+    background: peachpuff;
+  }
+
+  mat-card.SWITCH mat-card-content{
+    background: lavender;
+  }
+}

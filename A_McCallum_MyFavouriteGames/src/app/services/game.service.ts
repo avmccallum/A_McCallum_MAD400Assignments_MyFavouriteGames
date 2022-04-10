@@ -23,7 +23,7 @@ export class GameService {
 
   getItem(id: number): Observable<Content> {
     this.messageService.removeLast()
-    this.messageService.add(`Content item at ID: ${id}`)
+    // this.messageService.add(`Content item at ID: ${id}`)
     return of(CONTENT[id])
   }
 

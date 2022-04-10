@@ -20,6 +20,9 @@ import {MatDialogModule} from "@angular/material/dialog";
 import { ContentFormComponent } from './content-form/content-form.component';
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {MatExpansionModule} from "@angular/material/expansion";
+import { AppRoutingModule } from './app-routing.module';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import {MatExpansionModule} from "@angular/material/expansion";
     HoverAffectDirective,
     MessagesComponent,
     ModifyContentComponent,
-    ContentFormComponent
+    ContentFormComponent,
+    ContentDetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,8 @@ import {MatExpansionModule} from "@angular/material/expansion";
     MatCardModule,
     MatDialogModule,
     MatAutocompleteModule,
-    MatExpansionModule
+    MatExpansionModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

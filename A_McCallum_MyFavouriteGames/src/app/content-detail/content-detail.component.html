@@ -1,0 +1,25 @@
+<!--<div>-->
+<!--  <mat-form-field>-->
+<!--    <input matInput type="number" #item placeholder="Load ID">-->
+<!--  </mat-form-field>-->
+<!--  <button mat-flat-button color="accent" type="button" (click)="selectItem(item.value)">Load Item</button>-->
+<!--</div>-->
+<!--<app-content-card [content]="content" class="top-card" ></app-content-card>-->
+<mat-card  *ngIf="content" class="{{ content.type }}">
+  <mat-card-title>{{ content.title }}</mat-card-title>
+  <mat-card-content>
+    <p class="description"> {{ content.description }}</p>
+<!--    <a [routerLink]="['/content', content.id]" routerLinkActive="active">See Details</a>-->
+    <p>Creator: {{ content.creator }}</p>
+    <p  *ngIf="content.type">Type: {{ content.type }}</p>
+    <ul *ngIf="content.tags">
+      <li  *ngFor="let item of content.tags">{{ item }}</li>
+    </ul>
+  </mat-card-content>
+  <img mat-card-image *ngIf="content.imgURL" src="{{ content.imgURL }}">
+  <img mat-card-image *ngIf="!content.imgURL" src="https://cdn.pixabay.com/photo/2020/05/04/02/08/control-5127467__340.png">
+</mat-card>
+<div>
+  <p *ngIf="!content">There is no content at that ID</p>
+  <a [routerLink]="['/list']" routerLinkActive="active">Back to main list</a>
+</div>
