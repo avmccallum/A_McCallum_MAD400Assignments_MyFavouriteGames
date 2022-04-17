@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import { Content } from './helper-files/content-interface';
 import { GameService } from './services/game.service';
+import {LogUpdateService} from "./services/log-update.service";
 
 @Component({
   selector: 'app-root',
@@ -11,10 +12,11 @@ export class AppComponent {
   title = 'A_McCallum_MyFavouriteGames';
 
 
-  constructor() {
+  constructor(private logService: LogUpdateService) {
   }
 
   ngOnInit(): void {
+    this.logService.init();
   }
 
 
